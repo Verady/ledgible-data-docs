@@ -12,4 +12,4 @@ The following guide explains the routes available to Ledgible OAuth clients for 
 
 ## Collection for Insomnia / Postman
 
-https://github.com/Verady/ledgible-data-docs/Insomnia_Ledgible-Data.json
+https://github.com/Verady/ledgible-data-docs/blob/main/Insomnia_Ledgible-Data.json
