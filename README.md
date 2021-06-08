@@ -10,6 +10,6 @@ The following guide explains the routes available to Ledgible OAuth clients for 
 |`/update/[exchangeName]` <br /><br /> *Example*: 'https://data.ledgible.io/update/kraken?userId=xxxxxxxxxxxx&exchange_id=xxxxxxxxxxx'<br /><br /> **Query Parameters**: <br /> - Unique user identifier <br /> - Unique exchange identifier |Allows an existing user with an existing exchange to update existing API credentials or re-auth through the exchange's OAuth flow to re-establish access based on matching exchange/uses IDs.
 
 
-## Collection for Postman
+## Collection for Insomnia / Postman
 
-https://github.com/Verady/ledgible-data-docs/
+https://github.com/Verady/ledgible-data-docs/Insomnia_Ledgible-Data.json
