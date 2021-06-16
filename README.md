@@ -8,11 +8,11 @@ The following guide explains the routes available to Ledgible OAuth clients for 
 |`/auth/[exchangeName]/update?user_id=xxxxxx&token=xxxxxx&data_source_id=xxxxxx`<br/><br/> *Example*: https://data.ledgible.io/auth/kraken/update?user_id=abc123&token=ushDYwhad7d7999shdesjaa&data_source_id=373c4c01-b9b7-43a2-b0e5-e524927b627a<br/><br/> **Required Query Parameters**: <br/> ***user_id*** - unique identifier of the user<br/>***token*** - valid OAuth access token provided by Ledgible<br />***data_source_id*** - Ledgible system identifier for the specific data source to be updated<br/><br/>**Optional Query Parameters**<br/>*None*|Opens update flow for an existing data source tied to a specific user. If api-based, will ask user to input updated credentials. For OAuth exchanges, it will immediately trigger an OAuth flow to update the user's stored credentials.
 
 
+## Collection for Insomnia / Postman
+
+https://github.com/Verady/ledgible-data-docs/blob/main/Insomnia_Ledgible-Data.json
 
 
 ## Oauth Client Flow
 ![OAuth Client Flow - Create Exchange](https://user-images.githubusercontent.com/664512/122285966-bc6be980-cec5-11eb-9fea-10d6d6bc0723.png)
 
-## Collection for Insomnia / Postman
-
-https://github.com/Verady/ledgible-data-docs/blob/main/Insomnia_Ledgible-Data.json
