@@ -1,0 +1,735 @@
+{
+  "info": {
+    "name": "Insomnia",
+    "_postman_id": "edd86266-818c-49b1-8974-af3412f251fa",
+    "description": "",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "client",
+      "description": "",
+      "item": [
+        {
+          "id": "52a64eb2-9675-4209-9808-b90d9f3ae6bb",
+          "name": "Get list of configured exchanges",
+          "request": {
+            "url": {
+              "host": "{{Server 2}}",
+              "path": [
+                "client/exchanges"
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded",
+                "description": "",
+                "disabled": false
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "disabled": false
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "client_id",
+                  "value": "{{_.clientId}}",
+                  "disabled": false,
+                  "type": "text",
+                  "description": ""
+                },
+                {
+                  "key": "client_secret",
+                  "value": "{{ _.clientSecret }}",
+                  "disabled": false,
+                  "type": "text",
+                  "description": ""
+                }
+              ],
+              "disabled": false
+            },
+            "description": ""
+          },
+          "response": [
+            {
+              "header": [],
+              "code": 200,
+              "name": "Response_200",
+              "id": "235799da-e53e-447b-bba9-2140f1930290"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ui",
+      "description": "",
+      "item": [
+        {
+          "id": "33de2459-ebd3-4706-9ee4-1fb50b1a3d85",
+          "name": "Create Exchange",
+          "request": {
+            "url": {
+              "host": "{{Server 1}}",
+              "path": [
+                "exchange/create"
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "disabled": false
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "disabled": false
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"exchangeName\": \"gemini\",\r\n  \"userId\": \"{{_.userId}}\",\r\n  \"secrets\": {\r\n    \"apiKey\": \"account-kNzbaUXz2Bq7EaF41PTC\",\r\n    \"secret\": \"23MCUAUgjv6b9RzMrprzA5wz52fU\"\r\n  },\r\n  \"client_id\": \"{{_.clientId}}\",\r\n  \"redirect_uri\": \"{{ _.redirectURI }}\"\r\n}",
+              "disabled": false
+            },
+            "description": ""
+          },
+          "response": [
+            {
+              "header": [],
+              "code": 200,
+              "name": "Response_200",
+              "id": "031896d6-e25f-4e5d-b1e7-7519058ea213"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "data",
+      "description": "",
+      "item": [
+        {
+          "id": "9fd314ba-2d15-4e7e-87d6-dd11d352c777",
+          "name": "Get User",
+          "request": {
+            "url": {
+              "host": "{{Server 1}}",
+              "path": [
+                "data/user/:_.userId"
+              ],
+              "variable": [
+                {
+                  "id": "_.userId",
+                  "value": "_.userId29",
+                  "type": "string",
+                  "description": ""
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "disabled": false
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "disabled": false
+            },
+            "description": ""
+          },
+          "response": [
+            {
+              "code": 200,
+              "name": "Response_200",
+              "id": "b6fec280-75f0-4b82-9ce2-091caafb7c86"
+            }
+          ]
+        },
+        {
+          "id": "b9836191-ad8c-463d-8c35-a7a15b4a9fac",
+          "name": "Get Data Sources",
+          "request": {
+            "url": {
+              "host": "{{Server 2}}",
+              "path": [
+                "data/user/:_.userId/dataSources/"
+              ],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "20",
+                  "description": "",
+                  "disabled": false
+                },
+                {
+                  "key": "skip",
+                  "value": "0",
+                  "description": "",
+                  "disabled": false
+                }
+              ],
+              "variable": [
+                {
+                  "id": "_.userId",
+                  "value": "_.userId69",
+                  "type": "string",
+                  "description": ""
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "disabled": false
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "disabled": false
+            },
+            "description": ""
+          },
+          "response": [
+            {
+              "code": 200,
+              "name": "Response_200",
+              "id": "3f94c1d5-5465-4368-b317-cec14d08e0d9"
+            }
+          ]
+        },
+        {
+          "id": "e8d386df-21e8-45d2-a706-c5cbf68116a7",
+          "name": "Delete User",
+          "request": {
+            "url": {
+              "host": "{{Server 2}}",
+              "path": [
+                "data/user/:_.userId/delete"
+              ],
+              "variable": [
+                {
+                  "id": "_.userId",
+                  "value": "_.userId69",
+                  "type": "string",
+                  "description": ""
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "disabled": false
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "disabled": false
+            },
+            "description": ""
+          },
+          "response": [
+            {
+              "code": 200,
+              "name": "Response_200",
+              "id": "a1f3dfdd-dda3-49fa-a85a-0cc463168377"
+            }
+          ]
+        },
+        {
+          "id": "004a3a57-59e4-476d-954a-e3d50ac55cc9",
+          "name": "Get Data Source",
+          "request": {
+            "url": {
+              "host": "{{Server 2}}",
+              "path": [
+                "data/user/:_.userId/dataSources/:_.dataSourceId"
+              ],
+              "variable": [
+                {
+                  "id": "_.userId",
+                  "value": "_.userId69",
+                  "type": "string",
+                  "description": ""
+                },
+                {
+                  "id": "_.dataSourceId",
+                  "value": "_.dataSourceId69",
+                  "type": "string",
+                  "description": ""
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "disabled": false
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "disabled": false
+            },
+            "description": ""
+          },
+          "response": [
+            {
+              "code": 200,
+              "name": "Response_200",
+              "id": "8b47ff12-35b0-4e31-96e7-aea1f11bd3d7"
+            }
+          ]
+        },
+        {
+          "id": "f45e44c2-312f-4099-a488-cc7c5516355c",
+          "name": "Get Transactions",
+          "request": {
+            "url": {
+              "host": "{{Server 2}}",
+              "path": [
+                "data/user/:_.userId/dataSources/:_.dataSourceId/transactions"
+              ],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "10",
+                  "description": "",
+                  "disabled": false
+                },
+                {
+                  "key": "skip",
+                  "value": "1",
+                  "description": "",
+                  "disabled": false
+                }
+              ],
+              "variable": [
+                {
+                  "id": "_.userId",
+                  "value": "_.userId69",
+                  "type": "string",
+                  "description": ""
+                },
+                {
+                  "id": "_.dataSourceId",
+                  "value": "_.dataSourceId69",
+                  "type": "string",
+                  "description": ""
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "disabled": false
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "disabled": false
+            },
+            "description": ""
+          },
+          "response": [
+            {
+              "code": 200,
+              "name": "Response_200",
+              "id": "18b48ad8-9975-4a1a-9bff-999bb5800b9c"
+            }
+          ]
+        },
+        {
+          "id": "3e20d3e9-da43-4c51-b926-51233819f48e",
+          "name": "Get Balances",
+          "request": {
+            "url": {
+              "host": "{{Server 2}}",
+              "path": [
+                "data/user/:_.userId/dataSources/:_.dataSourceId/balances"
+              ],
+              "variable": [
+                {
+                  "id": "_.userId",
+                  "value": "_.userId69",
+                  "type": "string",
+                  "description": ""
+                },
+                {
+                  "id": "_.dataSourceId",
+                  "value": "_.dataSourceId69",
+                  "type": "string",
+                  "description": ""
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "disabled": false
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "disabled": false
+            },
+            "description": ""
+          },
+          "response": [
+            {
+              "code": 200,
+              "name": "Response_200",
+              "id": "198a696b-b256-4008-a17f-21ee7de50512"
+            }
+          ]
+        },
+        {
+          "id": "ace50a7a-5dce-4413-b621-31f536686ea1",
+          "name": "Delete Data Source",
+          "request": {
+            "url": {
+              "host": "{{Server 2}}",
+              "path": [
+                "data/user/:_.userId/dataSources/:_.dataSourceId/delete"
+              ],
+              "variable": [
+                {
+                  "id": "_.userId",
+                  "value": "_.userId69",
+                  "type": "string",
+                  "description": ""
+                },
+                {
+                  "id": "_.dataSourceId",
+                  "value": "_.dataSourceId69",
+                  "type": "string",
+                  "description": ""
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "disabled": false
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "disabled": false
+            },
+            "description": ""
+          },
+          "response": [
+            {
+              "code": 200,
+              "name": "Response_200",
+              "id": "3fcaa708-23b5-41f7-8093-ea489fa44a5d"
+            }
+          ]
+        },
+        {
+          "id": "df193dd5-13df-4b03-a4b5-b0084f36dfd1",
+          "name": "Refresh Data Source",
+          "request": {
+            "url": {
+              "host": "{{Server 2}}",
+              "path": [
+                "data/user/:_.userId/dataSources/:_.dataSourceId/refresh"
+              ],
+              "variable": [
+                {
+                  "id": "_.userId",
+                  "value": "_.userId69",
+                  "type": "string",
+                  "description": ""
+                },
+                {
+                  "id": "_.dataSourceId",
+                  "value": "_.dataSourceId69",
+                  "type": "string",
+                  "description": ""
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "disabled": false
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "disabled": false
+            },
+            "description": ""
+          },
+          "response": [
+            {
+              "code": 200,
+              "name": "Response_200",
+              "id": "f324b4b2-0fac-4cf2-9d31-16446962f780"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "oauth",
+      "description": "",
+      "item": [
+        {
+          "id": "85ccec42-83fa-4bc8-b7e0-32da54423ed9",
+          "name": "Get refresh token and access token",
+          "request": {
+            "url": {
+              "host": "{{Server 2}}",
+              "path": [
+                "oauth2/token"
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded",
+                "description": "",
+                "disabled": false
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "disabled": false
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "code",
+                  "value": "c28749410327b3da27349dcc7f4ceab06a574ac5",
+                  "disabled": false,
+                  "type": "text",
+                  "description": ""
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code",
+                  "disabled": false,
+                  "type": "text",
+                  "description": ""
+                },
+                {
+                  "key": "client_id",
+                  "value": "{{_.clientId}}",
+                  "disabled": false,
+                  "type": "text",
+                  "description": ""
+                },
+                {
+                  "key": "client_secret",
+                  "value": "{{_.clientSecret}}",
+                  "disabled": false,
+                  "type": "text",
+                  "description": ""
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "{{_.redirectURI}}",
+                  "disabled": false,
+                  "type": "text",
+                  "description": ""
+                }
+              ],
+              "disabled": false
+            },
+            "description": ""
+          },
+          "response": [
+            {
+              "header": [],
+              "code": 200,
+              "name": "Response_200",
+              "id": "fc304d2c-505a-4772-8f8a-22e9e2a98c1c"
+            }
+          ]
+        },
+        {
+          "id": "64d7d724-e25b-436f-b863-8df068bac489",
+          "name": "Refresh Refresh Token",
+          "request": {
+            "url": {
+              "host": "{{Server 2}}",
+              "path": [
+                "oauth2/token"
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded",
+                "description": "",
+                "disabled": false
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "disabled": false
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "refresh_token",
+                  "value": "2d7feffdf5bce0e932f735730584fc9c1285227e",
+                  "disabled": false,
+                  "type": "text",
+                  "description": ""
+                },
+                {
+                  "key": "client_id",
+                  "value": "{{_.clientId}}",
+                  "disabled": false,
+                  "type": "text",
+                  "description": ""
+                },
+                {
+                  "key": "grant_type",
+                  "value": "refresh_token",
+                  "disabled": false,
+                  "type": "text",
+                  "description": ""
+                },
+                {
+                  "key": "client_secret",
+                  "value": "{{_.clientSecret}}",
+                  "disabled": false,
+                  "type": "text",
+                  "description": ""
+                }
+              ],
+              "disabled": false
+            },
+            "description": ""
+          },
+          "response": [
+            {
+              "header": [],
+              "code": 200,
+              "name": "Response_200",
+              "id": "b0320927-5861-49b4-9abc-75d5ccedc339"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "Server 1",
+      "value": "DefaultParameterValue/DefaultParameterValue"
+    },
+    {
+      "key": "Server 2",
+      "value": "DefaultParameterValue/DefaultParameterValue"
+    },
+    {
+      "key": "auth server",
+      "value": "{DefaultParameterValue}/{DefaultParameterValue}/oauth2"
+    },
+    {
+      "key": "Server 11",
+      "value": "DefaultParameterValue/DefaultParameterValue"
+    },
+    {
+      "key": "Server 21",
+      "value": "DefaultParameterValue/DefaultParameterValue"
+    },
+    {
+      "key": "auth server1",
+      "value": "{DefaultParameterValue}/{DefaultParameterValue}/oauth2"
+    },
+    {
+      "key": "Server 12",
+      "value": "DefaultParameterValue/DefaultParameterValue"
+    },
+    {
+      "key": "Server 22",
+      "value": "DefaultParameterValue/DefaultParameterValue"
+    },
+    {
+      "key": "auth server2",
+      "value": "{DefaultParameterValue}/{DefaultParameterValue}/oauth2"
+    },
+    {
+      "key": "Server 13",
+      "value": "DefaultParameterValue/DefaultParameterValue"
+    },
+    {
+      "key": "Server 23",
+      "value": "DefaultParameterValue/DefaultParameterValue"
+    },
+    {
+      "key": "auth server3",
+      "value": "{DefaultParameterValue}/{DefaultParameterValue}/oauth2"
+    },
+    {
+      "key": "Server 14",
+      "value": "DefaultParameterValue/DefaultParameterValue"
+    },
+    {
+      "key": "Server 24",
+      "value": "DefaultParameterValue/DefaultParameterValue"
+    },
+    {
+      "key": "auth server4",
+      "value": "{DefaultParameterValue}/{DefaultParameterValue}/oauth2"
+    },
+    {
+      "key": "Server 15",
+      "value": "DefaultParameterValue/DefaultParameterValue"
+    },
+    {
+      "key": "Server 25",
+      "value": "DefaultParameterValue/DefaultParameterValue"
+    },
+    {
+      "key": "auth server5",
+      "value": "{DefaultParameterValue}/{DefaultParameterValue}/oauth2"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": {
+      "authUrl": "{DefaultParameterValue}/{DefaultParameterValue}/oauth2/authorize",
+      "accessTokenUrl": "{DefaultParameterValue}/{DefaultParameterValue}/oauth2/token",
+      "scope": "",
+      "grantType": "authorization_code"
+    }
+  }
+}
