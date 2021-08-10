@@ -1,0 +1,44 @@
+{
+	"id": "3699034e-14a8-4bb9-bfad-528578022025",
+	"name": "Sandbox",
+	"values": [
+		{
+			"key": "server",
+			"value": "https://data-api-sandbox.ledgibledata.io/api",
+			"enabled": true
+		},
+		{
+			"key": "version",
+			"value": "v1",
+			"enabled": true
+		},
+		{
+			"key": "clientId",
+			"value": "6dec5c87-46bf-4f84-97f7-cb2ae4191dd2",
+			"enabled": true
+		},
+		{
+			"key": "clientSecret",
+			"value": "2fc34aab-26ff-4add-acf6-2e56bce0f2b4",
+			"enabled": true
+		},
+		{
+			"key": "redirectURI",
+			"value": "http://127.0.0.1/callback",
+			"enabled": true
+		},
+		{
+			"key": "userId",
+			"value": "3214",
+			"enabled": true
+		},
+		{
+			"key": "dataSourceId",
+			"value": "cdd621ae-1225-4a9c-b02c-356efd8a5954",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2021-08-10T02:16:29.486Z",
+	"_postman_exported_using": "Postman/8.10.0"
+}
