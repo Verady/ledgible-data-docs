@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "93662072-6f93-4507-88dc-add187aa3139",
+		"_postman_id": "ce4cf816-c326-4653-972f-6e3c0609d8e3",
 		"name": "Ledgible Data API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -46,6 +46,336 @@
 								"{{version}}",
 								"client",
 								"exchanges"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response_200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "client_id",
+											"value": "{{_.clientId}}",
+											"type": "text"
+										},
+										{
+											"key": "client_secret",
+											"value": "{{ _.clientSecret }}",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{Server 2}}/client/exchanges",
+									"host": [
+										"{{Server 2}}"
+									],
+									"path": [
+										"client",
+										"exchanges"
+									]
+								}
+							},
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Get list of configured applications",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"client_id\": \"{{clientId}}\",\n    \"client_secret\": \"{{clientSecret}}\",\n    \"skip\": 0,\n    \"limit\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/{{version}}/client/applications",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"{{version}}",
+								"client",
+								"applications"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response_200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "client_id",
+											"value": "{{_.clientId}}",
+											"type": "text"
+										},
+										{
+											"key": "client_secret",
+											"value": "{{ _.clientSecret }}",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{Server 2}}/client/exchanges",
+									"host": [
+										"{{Server 2}}"
+									],
+									"path": [
+										"client",
+										"exchanges"
+									]
+								}
+							},
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Add application configuration",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"client_id\": \"{{clientId}}\",\n    \"client_secret\": \"{{clientSecret}}\",\n    \"appId\": \"Test\",\n    \"appName\": \"Test\",\n    \"uiConfiguration\": {\n        \"primaryColor\": \"EDC9C2\",\n        \"secondaryColor\": \"C2E8ED\",\n        \"logo\": \"https://logo-link/logo.jpg\",\n        \"landingText\": \"Test\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/{{version}}/client/exchanges",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"{{version}}",
+								"client",
+								"exchanges"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response_200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "client_id",
+											"value": "{{_.clientId}}",
+											"type": "text"
+										},
+										{
+											"key": "client_secret",
+											"value": "{{ _.clientSecret }}",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{Server 2}}/client/exchanges",
+									"host": [
+										"{{Server 2}}"
+									],
+									"path": [
+										"client",
+										"exchanges"
+									]
+								}
+							},
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Edit application configuration",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"client_id\": \"{{clientId}}\",\n    \"client_secret\": \"{{clientSecret}}\",\n    \"uiConfiguration\": {\n        \"logo\": \"http://logo-new.com/logo.jpg\",\n        \"landingText\": \"Test2\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/{{version}}/client/applications/Test321",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"{{version}}",
+								"client",
+								"applications",
+								"Test321"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response_200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "client_id",
+											"value": "{{_.clientId}}",
+											"type": "text"
+										},
+										{
+											"key": "client_secret",
+											"value": "{{ _.clientSecret }}",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{Server 2}}/client/exchanges",
+									"host": [
+										"{{Server 2}}"
+									],
+									"path": [
+										"client",
+										"exchanges"
+									]
+								}
+							},
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Delete configured application",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{server}}/{{version}}/client/applications/Test321/delete",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"{{version}}",
+								"client",
+								"applications",
+								"Test321",
+								"delete"
 							]
 						}
 					},
